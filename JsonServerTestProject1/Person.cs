@@ -11,6 +11,7 @@ namespace JsonServerTestProject1
     [TestClass]
     public class Person
     {
+        public int Id { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string email { get; set; }
@@ -49,28 +50,28 @@ namespace JsonServerTestProject1
         [TestMethod]
         public void AddPerson()
         {
-            // arrange
+            //arrange
             RestRequest request = new RestRequest("/db/create", Method.Post);
-            request.AddHeader("Content-type", "application/json");
-            request.AddJsonBody(
-            new Person
-            {
-                first_name = "rasi",
-                last_name = "priyanka",
-                email = "rasi@gmail.com",
-                address = "9998765456",
-                phnum = "Kmm"
-            });
-            // act
+            JObject jobjectBody = new JObject();
+            jobjectBody.Add("first_name", "rasi");
+            jobjectBody.Add("last_name", "abc");
+            jobjectBody.Add("email", "rasi@gmail.com");
+            jobjectBody.Add("address", "hyd");
+            jobjectBody.Add("phnum", "938444837");
+            request.AddHeader("Accept", "application/json");
+            request.AddParameter("application/json", jobjectBody, ParameterType.RequestBody);
+            
+            //act
             RestResponse response = client.ExecuteAsync(request).Result;
-            // assert
+            //assert
             Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
-            Person dataResponse = JsonConvert.DeserializeObject<Person>(response.Content);
-            Assert.AreEqual("rasi", dataResponse.first_name);
-            Assert.AreEqual("priyanka", dataResponse.last_name);
-            Assert.AreEqual("rasi@gmail.com", dataResponse.email);
-            Assert.AreEqual("9998765456", dataResponse.address);
-            Assert.AreEqual("Kmm", dataResponse.phnum);
+            Person person = JsonConvert.DeserializeObject<Person>(response.Content);
+            Assert.AreEqual("priya", person.first_name);
+            Assert.AreEqual("kkk", person.last_name);
+            Assert.AreEqual("rasi@gmail.com", person.email);
+            Assert.AreEqual("hyd", person.address);
+            Assert.AreEqual("938444837", person.phnum);
+            Console.WriteLine(response.Content);
         }
     }
 
