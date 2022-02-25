@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpProblem", "RestSharpProblem.csproj", "{3A9E4F2F-2E69-476A-AA15-26D1587EC7F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonServerTestProject1", "..\JsonServerTestProject1\JsonServerTestProject1.csproj", "{C9F23C01-9C3D-4FA9-9AFF-20E782E03BD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3A9E4F2F-2E69-476A-AA15-26D1587EC7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A9E4F2F-2E69-476A-AA15-26D1587EC7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A9E4F2F-2E69-476A-AA15-26D1587EC7F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F23C01-9C3D-4FA9-9AFF-20E782E03BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F23C01-9C3D-4FA9-9AFF-20E782E03BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F23C01-9C3D-4FA9-9AFF-20E782E03BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F23C01-9C3D-4FA9-9AFF-20E782E03BD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
